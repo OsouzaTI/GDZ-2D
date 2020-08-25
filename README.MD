@@ -2,7 +2,7 @@
 
 ## The engine
 
-This is my first time programming a game engine in a month of study, i benigne with book called "OpenGL Game Development" writed by Chris Seddon, 2005.
+This is my first time programming a game engine in a month of study, i benigne with book called "OpenGL Game Development" written by Chris Seddon, 2005.
 
 ## How the engine work
 
