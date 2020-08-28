@@ -1,0 +1,58 @@
+\hypertarget{class_entity_manager}{}\doxysection{Entity\+Manager Class Reference}
+\label{class_entity_manager}\index{EntityManager@{EntityManager}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_entity_manager_aa50069daf63b9e7c441af973ffe5bb96}\label{class_entity_manager_aa50069daf63b9e7c441af973ffe5bb96}} 
+void {\bfseries Clear\+Data} ()
+\item 
+void \mbox{\hyperlink{class_entity_manager_a29ee635235a8b76bdf10336d70dbf6ed}{Update}} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{class_entity_manager_ad8bac9ea131d6b9dae9311dbc701d9ab}\label{class_entity_manager_ad8bac9ea131d6b9dae9311dbc701d9ab}} 
+void {\bfseries Render} ()
+\item 
+\mbox{\Hypertarget{class_entity_manager_aff2c6ad8a2ac1a262d829fafc340c9d3}\label{class_entity_manager_aff2c6ad8a2ac1a262d829fafc340c9d3}} 
+bool {\bfseries Has\+No\+Entities} ()
+\item 
+\mbox{\Hypertarget{class_entity_manager_ad5a3a992715273018f7c905e740d7cce}\label{class_entity_manager_ad5a3a992715273018f7c905e740d7cce}} 
+void {\bfseries List\+All\+Entities} ()
+\item 
+\mbox{\Hypertarget{class_entity_manager_a70fd2fe237922f39555c7fda5cba5d58}\label{class_entity_manager_a70fd2fe237922f39555c7fda5cba5d58}} 
+void {\bfseries Show\+Entity} (\mbox{\hyperlink{class_entity}{Entity}} $\ast$entity)
+\item 
+\mbox{\Hypertarget{class_entity_manager_a08cd8429d7a995daa631f9cd6415a88c}\label{class_entity_manager_a08cd8429d7a995daa631f9cd6415a88c}} 
+\mbox{\hyperlink{class_entity}{Entity}} \& {\bfseries Add\+Entity} (std\+::string entity\+Name, Layer\+Type layer)
+\item 
+\mbox{\Hypertarget{class_entity_manager_a1b421e15a9afc7542b366b3ce040840e}\label{class_entity_manager_a1b421e15a9afc7542b366b3ce040840e}} 
+std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ {\bfseries Get\+Entities} () const
+\item 
+\mbox{\Hypertarget{class_entity_manager_a516a6668608161a56b57d055b735679f}\label{class_entity_manager_a516a6668608161a56b57d055b735679f}} 
+std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ {\bfseries Get\+Entities\+By\+Layer} (Layer\+Type layer) const
+\item 
+\mbox{\Hypertarget{class_entity_manager_a91669d50e6a840d131f96022f153e75d}\label{class_entity_manager_a91669d50e6a840d131f96022f153e75d}} 
+Collision\+Type {\bfseries Check\+Collisions} () const
+\item 
+\mbox{\Hypertarget{class_entity_manager_a5e58b3dcc5895c204bcdc473ed5e1b22}\label{class_entity_manager_a5e58b3dcc5895c204bcdc473ed5e1b22}} 
+unsigned int {\bfseries Get\+Entity\+Count} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_entity_manager_a306d429de06666ee3fac87b8105827fe}\label{class_entity_manager_a306d429de06666ee3fac87b8105827fe}} 
+std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ {\bfseries entities}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_entity_manager_a29ee635235a8b76bdf10336d70dbf6ed}\label{class_entity_manager_a29ee635235a8b76bdf10336d70dbf6ed}} 
+\index{EntityManager@{EntityManager}!Update@{Update}}
+\index{Update@{Update}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Entity\+Manager\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+this-\/$>$List\+All\+Entities();
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Projects/cpp/2dgameengine/src/Entity\+Manager.\+h\item 
+F\+:/\+Projects/cpp/2dgameengine/src/Entity\+Manager.\+cpp\end{DoxyCompactItemize}

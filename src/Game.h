@@ -7,6 +7,8 @@
 #include "Entity.h"
 #include "Component.h"
 #include "EntityManager.h"
+#include "Components/TransformComponent.h"
+
 
 class AssetManager;
 
@@ -19,6 +21,7 @@ class Game {
 		Game();
 		~Game();
 		int ticksLastFrame;
+		static TransformComponent* playerPosition;
 		static SDL_Renderer* renderer;
 		static AssetManager* assetManager;
 		static SDL_Event event;

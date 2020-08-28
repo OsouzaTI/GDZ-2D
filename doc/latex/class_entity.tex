@@ -1,0 +1,68 @@
+\hypertarget{class_entity}{}\doxysection{Entity Class Reference}
+\label{class_entity}\index{Entity@{Entity}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_entity_a89280af729d9d6805cd90de2b26636e7}\label{class_entity_a89280af729d9d6805cd90de2b26636e7}} 
+{\bfseries Entity} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&manager)
+\item 
+\mbox{\Hypertarget{class_entity_aa5c019c1dc48a8a74ca0af8d03824672}\label{class_entity_aa5c019c1dc48a8a74ca0af8d03824672}} 
+{\bfseries Entity} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&manager, std\+::string name, Layer\+Type layer)
+\item 
+\mbox{\Hypertarget{class_entity_a64043a3f77405466222ff997e272924f}\label{class_entity_a64043a3f77405466222ff997e272924f}} 
+void {\bfseries Update} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{class_entity_aaf9e8e81e77fe15e72f642bda6483ea3}\label{class_entity_aaf9e8e81e77fe15e72f642bda6483ea3}} 
+void {\bfseries Render} ()
+\item 
+\mbox{\Hypertarget{class_entity_aa75151fc607686b42d27f8c3ba73143d}\label{class_entity_aa75151fc607686b42d27f8c3ba73143d}} 
+void {\bfseries Destroy} ()
+\item 
+\mbox{\Hypertarget{class_entity_a7e5a5b2ce0b37dde76f76ed706612b71}\label{class_entity_a7e5a5b2ce0b37dde76f76ed706612b71}} 
+void {\bfseries List\+All\+Components} ()
+\item 
+\mbox{\Hypertarget{class_entity_abc853cd7bf66e0d152775b3f35eeedf4}\label{class_entity_abc853cd7bf66e0d152775b3f35eeedf4}} 
+void {\bfseries Show\+Component} (\mbox{\hyperlink{class_component}{Component}} $\ast$component)
+\item 
+\mbox{\Hypertarget{class_entity_a6e6a66a2cb8f47c0eaebc20511bded4f}\label{class_entity_a6e6a66a2cb8f47c0eaebc20511bded4f}} 
+bool {\bfseries Is\+Active} () const
+\item 
+\mbox{\Hypertarget{class_entity_a78bb7f1e7520abf82bb53bd7acf36035}\label{class_entity_a78bb7f1e7520abf82bb53bd7acf36035}} 
+{\footnotesize template$<$typename T , typename... T\+Args$>$ }\\T \& {\bfseries Add\+Component} (T\+Args \&\&... args)
+\item 
+\mbox{\Hypertarget{class_entity_a0084a74b2e2a363e4d3224d1877b9cf3}\label{class_entity_a0084a74b2e2a363e4d3224d1877b9cf3}} 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ {\bfseries Get\+Component} ()
+\item 
+\mbox{\Hypertarget{class_entity_a21a5c382bca76fadf22668d51439f3a6}\label{class_entity_a21a5c382bca76fadf22668d51439f3a6}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Has\+Component} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_entity_a931b21fbdebb1a5963b4bcab5df128f5}\label{class_entity_a931b21fbdebb1a5963b4bcab5df128f5}} 
+std\+::string {\bfseries name}
+\item 
+\mbox{\Hypertarget{class_entity_a6bf1f24482c6570f4c46a389e699a958}\label{class_entity_a6bf1f24482c6570f4c46a389e699a958}} 
+Layer\+Type {\bfseries layer}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_entity_a99b0c08da72fd96fa8ca27612f7a67f0}\label{class_entity_a99b0c08da72fd96fa8ca27612f7a67f0}} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \& {\bfseries manager}
+\item 
+\mbox{\Hypertarget{class_entity_a5e3cd0732581161b9f6b2d086f04d8b9}\label{class_entity_a5e3cd0732581161b9f6b2d086f04d8b9}} 
+bool {\bfseries is\+Active}
+\item 
+\mbox{\Hypertarget{class_entity_a5638ab4924c1a8b697ceb53e30863ebe}\label{class_entity_a5638ab4924c1a8b697ceb53e30863ebe}} 
+std\+::vector$<$ \mbox{\hyperlink{class_component}{Component}} $\ast$ $>$ {\bfseries components}
+\item 
+\mbox{\Hypertarget{class_entity_a7187a21a3161d769ebabeebf49d9c3df}\label{class_entity_a7187a21a3161d769ebabeebf49d9c3df}} 
+std\+::map$<$ const std\+::type\+\_\+info $\ast$, \mbox{\hyperlink{class_component}{Component}} $\ast$ $>$ {\bfseries component\+Type\+Map}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Projects/cpp/2dgameengine/src/Entity.\+h\item 
+F\+:/\+Projects/cpp/2dgameengine/src/Entity.\+cpp\end{DoxyCompactItemize}

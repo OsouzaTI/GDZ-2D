@@ -1,0 +1,89 @@
+\hypertarget{class_collider_component}{}\doxysection{Collider\+Component Class Reference}
+\label{class_collider_component}\index{ColliderComponent@{ColliderComponent}}
+
+
+\mbox{\hyperlink{class_collision}{Collision}} class component.  
+
+
+
+
+{\ttfamily \#include $<$Collider\+Component.\+h$>$}
+
+Inheritance diagram for Collider\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_collider_component}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider_component_ac4d6611c95f0dd21b1564e83fbce430b}{Collider\+Component}} (std\+::string collider\+Tag, int x, int y, int width, int height)
+\begin{DoxyCompactList}\small\item\em Construct a new Collider \mbox{\hyperlink{class_component}{Component}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_collider_component_a6b80758cc39e1be98a28d9f406e56b3f}\label{class_collider_component_a6b80758cc39e1be98a28d9f406e56b3f}} 
+void {\bfseries set\+Texture} ()
+\item 
+\mbox{\Hypertarget{class_collider_component_a1be21b482fef5ef8a661324452979253}\label{class_collider_component_a1be21b482fef5ef8a661324452979253}} 
+void {\bfseries Initialize} () override
+\item 
+\mbox{\Hypertarget{class_collider_component_ad386a7de246a32ec386592ddd20a5390}\label{class_collider_component_ad386a7de246a32ec386592ddd20a5390}} 
+void {\bfseries Update} (float delta\+Time) override
+\item 
+\mbox{\Hypertarget{class_collider_component_a22aa984fef34f384c91e8d2eb533b1ce}\label{class_collider_component_a22aa984fef34f384c91e8d2eb533b1ce}} 
+void {\bfseries Render} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_collider_component_a53fc416583b76f0687748cd9f0b33771}\label{class_collider_component_a53fc416583b76f0687748cd9f0b33771}} 
+std\+::string {\bfseries collider\+Tag}
+\item 
+\mbox{\Hypertarget{class_collider_component_a2e61eb6ff3d987149045c823172023aa}\label{class_collider_component_a2e61eb6ff3d987149045c823172023aa}} 
+S\+D\+L\+\_\+\+Rect {\bfseries collider}
+\item 
+\mbox{\Hypertarget{class_collider_component_a4b3cfd8c9a1fb2a92a1d287c74d5c3db}\label{class_collider_component_a4b3cfd8c9a1fb2a92a1d287c74d5c3db}} 
+S\+D\+L\+\_\+\+Rect {\bfseries source\+Rectangle}
+\item 
+\mbox{\Hypertarget{class_collider_component_acd1a958c7541308e134b611f55d141a6}\label{class_collider_component_acd1a958c7541308e134b611f55d141a6}} 
+S\+D\+L\+\_\+\+Rect {\bfseries destination\+Rectangle}
+\item 
+\mbox{\Hypertarget{class_collider_component_aa093758a626aadbd4a295e115d87c5cf}\label{class_collider_component_aa093758a626aadbd4a295e115d87c5cf}} 
+S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries texture}
+\item 
+\mbox{\Hypertarget{class_collider_component_a9e8630c262f3fecfd657e6cc303f0b78}\label{class_collider_component_a9e8630c262f3fecfd657e6cc303f0b78}} 
+\mbox{\hyperlink{class_transform_component}{Transform\+Component}} $\ast$ {\bfseries transform}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_collision}{Collision}} class component. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_collider_component_ac4d6611c95f0dd21b1564e83fbce430b}\label{class_collider_component_ac4d6611c95f0dd21b1564e83fbce430b}} 
+\index{ColliderComponent@{ColliderComponent}!ColliderComponent@{ColliderComponent}}
+\index{ColliderComponent@{ColliderComponent}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{ColliderComponent()}{ColliderComponent()}}
+{\footnotesize\ttfamily Collider\+Component\+::\+Collider\+Component (\begin{DoxyParamCaption}\item[{std\+::string}]{collider\+Tag,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Collider \mbox{\hyperlink{class_component}{Component}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collider\+Tag} & Collider tag used for detect type collision \\
+\hline
+{\em x} & the x initial for S\+D\+L\+\_\+\+Rect of collider \\
+\hline
+{\em y} & the y initial for S\+D\+L\+\_\+\+Rect of collider \\
+\hline
+{\em width} & the width for S\+D\+L\+\_\+\+Rect of collider \\
+\hline
+{\em height} & the height for S\+D\+L\+\_\+\+Rect of collider \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Projects/cpp/2dgameengine/src/\+Components/Collider\+Component.\+h\end{DoxyCompactItemize}

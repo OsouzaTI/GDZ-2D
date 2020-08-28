@@ -1,0 +1,79 @@
+\hypertarget{class_sprite_component}{}\doxysection{Sprite\+Component Class Reference}
+\label{class_sprite_component}\index{SpriteComponent@{SpriteComponent}}
+Inheritance diagram for Sprite\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sprite_component}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sprite_component_a30241d2b54090d2051c1948a05e74530}\label{class_sprite_component_a30241d2b54090d2051c1948a05e74530}} 
+{\bfseries Sprite\+Component} (std\+::string asset\+Texture\+Id)
+\item 
+\mbox{\Hypertarget{class_sprite_component_adf606d076831fc5c4ddfbc0c13dbee1e}\label{class_sprite_component_adf606d076831fc5c4ddfbc0c13dbee1e}} 
+{\bfseries Sprite\+Component} (std\+::string id, int num\+Frames, int animation\+Speed, bool has\+Directions, bool is\+Fixed)
+\item 
+\mbox{\Hypertarget{class_sprite_component_a513fe463997821a34bd497d907ac13f0}\label{class_sprite_component_a513fe463997821a34bd497d907ac13f0}} 
+void {\bfseries Play} (std\+::string animation\+Name)
+\item 
+\mbox{\Hypertarget{class_sprite_component_a81c3d3a7a1fe10f540b05e8450bd0ada}\label{class_sprite_component_a81c3d3a7a1fe10f540b05e8450bd0ada}} 
+void {\bfseries Set\+Texture} (std\+::string asset\+Texture\+Id)
+\item 
+\mbox{\Hypertarget{class_sprite_component_a75435ae880176fea72b456cf60786903}\label{class_sprite_component_a75435ae880176fea72b456cf60786903}} 
+void {\bfseries Initialize} () override
+\item 
+\mbox{\Hypertarget{class_sprite_component_a60b763e200bfa84b3c52e6c33c8f60f4}\label{class_sprite_component_a60b763e200bfa84b3c52e6c33c8f60f4}} 
+void {\bfseries Update} (float delta\+Time) override
+\item 
+\mbox{\Hypertarget{class_sprite_component_aed147a66b829847927a8735168e2e3e6}\label{class_sprite_component_aed147a66b829847927a8735168e2e3e6}} 
+void {\bfseries Render} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sprite_component_a5f15b75d1cba8c15ae1c07829dd5ab68}\label{class_sprite_component_a5f15b75d1cba8c15ae1c07829dd5ab68}} 
+S\+D\+L\+\_\+\+Renderer\+Flip {\bfseries sprite\+Flip} = S\+D\+L\+\_\+\+F\+L\+I\+P\+\_\+\+N\+O\+NE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sprite_component_a73e0ed30934991be535aeb7ec4ae1c85}\label{class_sprite_component_a73e0ed30934991be535aeb7ec4ae1c85}} 
+\mbox{\hyperlink{class_transform_component}{Transform\+Component}} $\ast$ {\bfseries transform}
+\item 
+\mbox{\Hypertarget{class_sprite_component_abd3e807ff707a5280cf38ccd3545409f}\label{class_sprite_component_abd3e807ff707a5280cf38ccd3545409f}} 
+S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries texture}
+\item 
+\mbox{\Hypertarget{class_sprite_component_afb97a68e49f9535b3b258125be3faf3b}\label{class_sprite_component_afb97a68e49f9535b3b258125be3faf3b}} 
+S\+D\+L\+\_\+\+Rect {\bfseries source\+Rectangle}
+\item 
+\mbox{\Hypertarget{class_sprite_component_ad2e2e48db367550750ff131d61090c0d}\label{class_sprite_component_ad2e2e48db367550750ff131d61090c0d}} 
+S\+D\+L\+\_\+\+Rect {\bfseries destination\+Rectangle}
+\item 
+\mbox{\Hypertarget{class_sprite_component_a220169826afd95c875e176570414aa5d}\label{class_sprite_component_a220169826afd95c875e176570414aa5d}} 
+bool {\bfseries is\+Animated}
+\item 
+\mbox{\Hypertarget{class_sprite_component_aea6df118244dcfd5b508013eb8f349e8}\label{class_sprite_component_aea6df118244dcfd5b508013eb8f349e8}} 
+int {\bfseries num\+Frames}
+\item 
+\mbox{\Hypertarget{class_sprite_component_af0e50eaa1c3344cf49df6069a72a47d9}\label{class_sprite_component_af0e50eaa1c3344cf49df6069a72a47d9}} 
+int {\bfseries animation\+Speed}
+\item 
+\mbox{\Hypertarget{class_sprite_component_ac9e59a786bdfe7f33e611ea1415c40a9}\label{class_sprite_component_ac9e59a786bdfe7f33e611ea1415c40a9}} 
+bool {\bfseries is\+Fixed}
+\item 
+\mbox{\Hypertarget{class_sprite_component_aefb3110362d990a2d641b1a7c417b764}\label{class_sprite_component_aefb3110362d990a2d641b1a7c417b764}} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_animation}{Animation}} $>$ {\bfseries animations}
+\item 
+\mbox{\Hypertarget{class_sprite_component_aa24aed083b7e844ff9559148e6d59cf2}\label{class_sprite_component_aa24aed083b7e844ff9559148e6d59cf2}} 
+std\+::string {\bfseries current\+Animation\+Name}
+\item 
+\mbox{\Hypertarget{class_sprite_component_ace25fca562416df99988bbc17388831a}\label{class_sprite_component_ace25fca562416df99988bbc17388831a}} 
+unsigned int {\bfseries animation\+Index} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Projects/cpp/2dgameengine/src/\+Components/Sprite\+Component.\+h\end{DoxyCompactItemize}

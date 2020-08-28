@@ -2,22 +2,28 @@
 #include "Constants.h"
 #include "Game.h"
 #include "AssetManager.h"
-#include "Components/TransformComponent.h"
 #include "./Components/SpriteComponent.h"
 #include "./Components/KeyboardControlComponent.h"
 #include "./Components/ColliderComponent.h"
+#include "./Primitives/PCircle.h"
 #include "../lib/glm/glm.hpp"
 #include "GDZmath.h"
 #include "Map.h"
 
+//Verificar o motivo disso ser necessario
 class EntityManager;
 
+// Gerenciador de entidades da engine
 EntityManager manager;
+
 AssetManager* Game::assetManager = new AssetManager(&manager);
 SDL_Renderer* Game::renderer;
 SDL_Event Game::event;
+TransformComponent* Game::playerPosition;
 SDL_Rect Game::camera = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 Map* map;
+
+PCircle pcircle = PCircle();
 
 Game::Game() {
     this->isRunning = false;
@@ -93,6 +99,7 @@ void Game::LoadLevel(int levelNumber){
     chopper.AddComponent<SpriteComponent>("chopper-image", 2, 90, true, false);
     chopper.AddComponent<KeyboardControlComponent>("up", "down", "right", "left", "space");
     chopper.AddComponent<ColliderComponent>("PLAYER", 240, 106, 32, 32);
+    playerPosition = chopper.GetComponent<TransformComponent>();
 
     Entity& radar(manager.AddEntity("radar", UI_LAYER));
     radar.AddComponent<TransformComponent>(WINDOW_WIDTH - 64, 0, 0, 0, 64, 64, 1);
@@ -137,6 +144,7 @@ void Game::Update(){
     ticksLastFrame = SDL_GetTicks();
     manager.Update(deltaTime);
 
+
     HandleCameraMovement();
     CheckCollisions();
 
@@ -154,6 +162,8 @@ void Game::Render(){
     }
 
     manager.Render();
+
+    pcircle.RenderCirle(renderer);
 
     SDL_RenderPresent(renderer);
 
@@ -192,7 +202,7 @@ void Game::HandleCameraMovement(){
     camera.x = GDZmath::clamp(camera.x, camera.w, 0);
     camera.y = GDZmath::clamp(camera.y, camera.h, 0);
 
-    KeepWindow(mainPlayerTransform);
+    //KeepWindow(mainPlayerTransform);
 }
 
 void Game::CheckCollisions(){

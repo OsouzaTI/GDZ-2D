@@ -7,16 +7,27 @@
 #include "../AssetManager.h"
 #include "../Component.h"
 #include "TransformComponent.h"
-
+/**
+ * @brief Collision class component 
+ */
 class ColliderComponent: public Component {
     public:
         std::string colliderTag;
         SDL_Rect collider;
         SDL_Rect sourceRectangle;
+        
         SDL_Rect destinationRectangle;
         SDL_Texture* texture;
         TransformComponent* transform;
-
+        /**
+         * @brief Construct a new Collider Component object
+         * 
+         * @param colliderTag Collider tag used for detect type collision
+         * @param x the x initial for SDL_Rect of collider
+         * @param y the y initial for SDL_Rect of collider
+         * @param width the width for SDL_Rect of collider
+         * @param height the height for SDL_Rect of collider
+         */
         ColliderComponent(std::string colliderTag, int x, int y, int width, int height){
             this->colliderTag = colliderTag;
             this->collider = {x, y, width, height};
