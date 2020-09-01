@@ -18,41 +18,40 @@ Inheritance diagram for Collider\+Component\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_collider_component_ac4d6611c95f0dd21b1564e83fbce430b}{Collider\+Component}} (std\+::string collider\+Tag, int x, int y, int width, int height)
+\mbox{\hyperlink{class_collider_component_ac4d6611c95f0dd21b1564e83fbce430b}{Collider\+Component}} (std\+::string \mbox{\hyperlink{class_collider_component_a53fc416583b76f0687748cd9f0b33771}{collider\+Tag}}, int x, int y, int width, int height)
 \begin{DoxyCompactList}\small\item\em Construct a new Collider \mbox{\hyperlink{class_component}{Component}} object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_collider_component_a6b80758cc39e1be98a28d9f406e56b3f}\label{class_collider_component_a6b80758cc39e1be98a28d9f406e56b3f}} 
-void {\bfseries set\+Texture} ()
-\item 
+void \mbox{\hyperlink{class_collider_component_a6b80758cc39e1be98a28d9f406e56b3f}{set\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Set the Texture of Collider. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_collider_component_a1be21b482fef5ef8a661324452979253}\label{class_collider_component_a1be21b482fef5ef8a661324452979253}} 
-void {\bfseries Initialize} () override
-\item 
-\mbox{\Hypertarget{class_collider_component_ad386a7de246a32ec386592ddd20a5390}\label{class_collider_component_ad386a7de246a32ec386592ddd20a5390}} 
-void {\bfseries Update} (float delta\+Time) override
-\item 
+void \mbox{\hyperlink{class_collider_component_a1be21b482fef5ef8a661324452979253}{Initialize}} () override
+\begin{DoxyCompactList}\small\item\em the initialization method of collider, this method load transform, source\+Rectangle, destination\+Rectangle and set the texture \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collider_component_ad386a7de246a32ec386592ddd20a5390}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em method update of this component \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_collider_component_a22aa984fef34f384c91e8d2eb533b1ce}\label{class_collider_component_a22aa984fef34f384c91e8d2eb533b1ce}} 
-void {\bfseries Render} () override
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_collider_component_a22aa984fef34f384c91e8d2eb533b1ce}{Render}} () override
+\begin{DoxyCompactList}\small\item\em method render of this object \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_collider_component_a53fc416583b76f0687748cd9f0b33771}\label{class_collider_component_a53fc416583b76f0687748cd9f0b33771}} 
-std\+::string {\bfseries collider\+Tag}
-\item 
+std\+::string \mbox{\hyperlink{class_collider_component_a53fc416583b76f0687748cd9f0b33771}{collider\+Tag}}
+\begin{DoxyCompactList}\small\item\em the tag of collider \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_collider_component_a2e61eb6ff3d987149045c823172023aa}\label{class_collider_component_a2e61eb6ff3d987149045c823172023aa}} 
-S\+D\+L\+\_\+\+Rect {\bfseries collider}
-\item 
+S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{class_collider_component_a2e61eb6ff3d987149045c823172023aa}{collider}}
+\begin{DoxyCompactList}\small\item\em the collider rectangle \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_collider_component_a4b3cfd8c9a1fb2a92a1d287c74d5c3db}\label{class_collider_component_a4b3cfd8c9a1fb2a92a1d287c74d5c3db}} 
-S\+D\+L\+\_\+\+Rect {\bfseries source\+Rectangle}
-\item 
+S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{class_collider_component_a4b3cfd8c9a1fb2a92a1d287c74d5c3db}{source\+Rectangle}}
+\begin{DoxyCompactList}\small\item\em the souce rectangle collider \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_collider_component_acd1a958c7541308e134b611f55d141a6}\label{class_collider_component_acd1a958c7541308e134b611f55d141a6}} 
-S\+D\+L\+\_\+\+Rect {\bfseries destination\+Rectangle}
-\item 
+S\+D\+L\+\_\+\+Rect \mbox{\hyperlink{class_collider_component_acd1a958c7541308e134b611f55d141a6}{destination\+Rectangle}}
+\begin{DoxyCompactList}\small\item\em the destination rectangle collider \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_collider_component_aa093758a626aadbd4a295e115d87c5cf}\label{class_collider_component_aa093758a626aadbd4a295e115d87c5cf}} 
-S\+D\+L\+\_\+\+Texture $\ast$ {\bfseries texture}
-\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \mbox{\hyperlink{class_collider_component_aa093758a626aadbd4a295e115d87c5cf}{texture}}
+\begin{DoxyCompactList}\small\item\em Texture of collider. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_collider_component_a9e8630c262f3fecfd657e6cc303f0b78}\label{class_collider_component_a9e8630c262f3fecfd657e6cc303f0b78}} 
-\mbox{\hyperlink{class_transform_component}{Transform\+Component}} $\ast$ {\bfseries transform}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_transform_component}{Transform\+Component}} $\ast$ \mbox{\hyperlink{class_collider_component_a9e8630c262f3fecfd657e6cc303f0b78}{transform}}
+\begin{DoxyCompactList}\small\item\em the transform of owner, the owner it\textquotesingle{}s a entity \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -82,6 +81,28 @@ Construct a new Collider \mbox{\hyperlink{class_component}{Component}} object.
 {\em height} & the height for S\+D\+L\+\_\+\+Rect of collider \\
 \hline
 \end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_collider_component_ad386a7de246a32ec386592ddd20a5390}\label{class_collider_component_ad386a7de246a32ec386592ddd20a5390}} 
+\index{ColliderComponent@{ColliderComponent}!Update@{Update}}
+\index{Update@{Update}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Collider\+Component\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+method update of this component 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & the rate of update game loop \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_component_a3c50208a8c7ea021b0ae2b9dfbaec65a}{Component}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

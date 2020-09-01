@@ -10,11 +10,13 @@ build:
 	-lmingw32 \
 	-lSDL2main \
 	-lSDL2_image \
-	-LSDL_ttf \
-	-LSDL2_mixer \
+	-lSDL2_ttf \
+	-lSDL2_mixer \
 	-lSDL2
 
-clean: del game.exe
+clean:
+	del game.exe
 
-run: start .\game.exe
+run:
+	game.exe
 

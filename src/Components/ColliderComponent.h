@@ -12,12 +12,30 @@
  */
 class ColliderComponent: public Component {
     public:
+        /**
+         * @brief the tag of collider
+         */
         std::string colliderTag;
+        /**
+         * @brief the collider rectangle
+         */
         SDL_Rect collider;
+        /**
+         * @brief the souce rectangle collider
+         */
         SDL_Rect sourceRectangle;
-        
+        /**
+         * @brief the destination rectangle collider
+         * 
+         */
         SDL_Rect destinationRectangle;
+        /**
+         * @brief Texture of collider
+         */
         SDL_Texture* texture;
+        /**
+         * @brief the transform of owner, the owner it's a entity
+         */
         TransformComponent* transform;
         /**
          * @brief Construct a new Collider Component object
@@ -32,11 +50,17 @@ class ColliderComponent: public Component {
             this->colliderTag = colliderTag;
             this->collider = {x, y, width, height};
         }
-
+        /**
+         * @brief Set the Texture of Collider
+         */
         void setTexture(){
             texture = Game::assetManager->GetTexture("collider");
         }
-
+        /**
+         * @brief the initialization method of collider, this method
+         * load transform, sourceRectangle, destinationRectangle and
+         * set the texture
+         */
         void Initialize() override {
             if(owner->HasComponent<TransformComponent>()){
                 transform = owner->GetComponent<TransformComponent>();

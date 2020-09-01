@@ -20,7 +20,7 @@ class PCircle {
         ~PCircle(){};
 
         void RenderCirle(SDL_Renderer* renderer, bool fillRect = false){
-            std::cout << "Primitive Renderer::PCircle" << std::endl;
+            //std::cout << "Primitive Renderer::PCircle" << std::endl;
             int cx = this->circle.center.x;
             int cy = this->circle.center.y;
             int radius = this->circle.radius;

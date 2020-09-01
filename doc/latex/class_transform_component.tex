@@ -9,18 +9,16 @@ Inheritance diagram for Transform\+Component\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_transform_component_ae046e9eb5e54e0c4cab37870994b2c79}\label{class_transform_component_ae046e9eb5e54e0c4cab37870994b2c79}} 
-{\bfseries Transform\+Component} (int posX, int posY, int velX, int velY, int w, int h, int s, bool is\+Player=false)
-\item 
+\mbox{\hyperlink{class_transform_component_ae046e9eb5e54e0c4cab37870994b2c79}{Transform\+Component}} (int posX, int posY, int velX, int velY, int w, int h, int s, bool is\+Player=false)
+\begin{DoxyCompactList}\small\item\em Construct a new Transform \mbox{\hyperlink{class_component}{Component}} object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_transform_component_ad9d8beb0980e6796f1fcb1c5183ddcbb}\label{class_transform_component_ad9d8beb0980e6796f1fcb1c5183ddcbb}} 
-void {\bfseries Initialize} () override
-\item 
-\mbox{\Hypertarget{class_transform_component_a7f61e8eea1e3d05a32653fa45bd10fe1}\label{class_transform_component_a7f61e8eea1e3d05a32653fa45bd10fe1}} 
-void {\bfseries Update} (float delta\+Time) override
-\item 
+void \mbox{\hyperlink{class_transform_component_ad9d8beb0980e6796f1fcb1c5183ddcbb}{Initialize}} () override
+\begin{DoxyCompactList}\small\item\em this method initialize the sprite component \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_component_a7f61e8eea1e3d05a32653fa45bd10fe1}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em method update of this component \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_transform_component_a0fb76ee36f44f311bd2f22292b6f1523}\label{class_transform_component_a0fb76ee36f44f311bd2f22292b6f1523}} 
-void {\bfseries Render} () override
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_transform_component_a0fb76ee36f44f311bd2f22292b6f1523}{Render}} () override
+\begin{DoxyCompactList}\small\item\em method render of this object \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,6 +40,60 @@ int {\bfseries height}
 \mbox{\Hypertarget{class_transform_component_ac95872ee109d63e8c3248c0232b21c22}\label{class_transform_component_ac95872ee109d63e8c3248c0232b21c22}} 
 int {\bfseries scale}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_transform_component_ae046e9eb5e54e0c4cab37870994b2c79}\label{class_transform_component_ae046e9eb5e54e0c4cab37870994b2c79}} 
+\index{TransformComponent@{TransformComponent}!TransformComponent@{TransformComponent}}
+\index{TransformComponent@{TransformComponent}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{TransformComponent()}{TransformComponent()}}
+{\footnotesize\ttfamily Transform\+Component\+::\+Transform\+Component (\begin{DoxyParamCaption}\item[{int}]{posX,  }\item[{int}]{posY,  }\item[{int}]{velX,  }\item[{int}]{velY,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{int}]{s,  }\item[{bool}]{is\+Player = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Transform \mbox{\hyperlink{class_component}{Component}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em posX} & the position x \\
+\hline
+{\em posY} & the y position \\
+\hline
+{\em velX} & the velocity x \\
+\hline
+{\em velY} & the velocity y \\
+\hline
+{\em w} & the width of transform \\
+\hline
+{\em h} & the height of transform \\
+\hline
+{\em s} & the scale of transform \\
+\hline
+{\em is\+Player} & if it\textquotesingle{}s tranform player \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_transform_component_a7f61e8eea1e3d05a32653fa45bd10fe1}\label{class_transform_component_a7f61e8eea1e3d05a32653fa45bd10fe1}} 
+\index{TransformComponent@{TransformComponent}!Update@{Update}}
+\index{Update@{Update}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Transform\+Component\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+method update of this component 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & the rate of update game loop \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_component_a3c50208a8c7ea021b0ae2b9dfbaec65a}{Component}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

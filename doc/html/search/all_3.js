@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['game_8',['Game',['../class_game.html',1,'']]],
-  ['gdzmath_9',['GDZmath',['../class_g_d_zmath.html',1,'']]]
+  ['entity_9',['Entity',['../class_entity.html',1,'']]],
+  ['entitymanager_10',['EntityManager',['../class_entity_manager.html',1,'']]]
 ];

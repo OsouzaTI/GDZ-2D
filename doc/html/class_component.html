@@ -76,8 +76,8 @@ Inheritance diagram for Component:</div>
   <img src="class_component.png" usemap="#Component_map" alt=""/>
   <map id="Component_map" name="Component_map">
 <area href="class_collider_component.html" title="Collision class component." alt="ColliderComponent" shape="rect" coords="0,56,171,80"/>
-<area href="class_keyboard_control_component.html" alt="KeyboardControlComponent" shape="rect" coords="181,56,352,80"/>
-<area href="class_sprite_component.html" alt="SpriteComponent" shape="rect" coords="362,56,533,80"/>
+<area href="class_keyboard_control_component.html" title="Class KeyboardControlComponent, this class is the component control of keyboard inputs." alt="KeyboardControlComponent" shape="rect" coords="181,56,352,80"/>
+<area href="class_sprite_component.html" title="this class is sprite renderer in the entity object" alt="SpriteComponent" shape="rect" coords="362,56,533,80"/>
 <area href="class_tile_component.html" alt="TileComponent" shape="rect" coords="543,56,714,80"/>
 <area href="class_transform_component.html" alt="TransformComponent" shape="rect" coords="724,56,895,80"/>
   </map>
@@ -86,13 +86,15 @@ Inheritance diagram for Component:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7037e9b900ae3ea82e0650a692a55f54"><td class="memItemLeft" align="right" valign="top"><a id="a7037e9b900ae3ea82e0650a692a55f54"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a7037e9b900ae3ea82e0650a692a55f54">Initialize</a> ()</td></tr>
+<tr class="memdesc:a7037e9b900ae3ea82e0650a692a55f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">this method initialize the sprite component <br /></td></tr>
 <tr class="separator:a7037e9b900ae3ea82e0650a692a55f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c50208a8c7ea021b0ae2b9dfbaec65a"><td class="memItemLeft" align="right" valign="top"><a id="a3c50208a8c7ea021b0ae2b9dfbaec65a"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> (float deltaTime)</td></tr>
+<tr class="memitem:a3c50208a8c7ea021b0ae2b9dfbaec65a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a3c50208a8c7ea021b0ae2b9dfbaec65a">Update</a> (float deltaTime)</td></tr>
+<tr class="memdesc:a3c50208a8c7ea021b0ae2b9dfbaec65a"><td class="mdescLeft">&#160;</td><td class="mdescRight">method update of this component  <a href="class_component.html#a3c50208a8c7ea021b0ae2b9dfbaec65a">More...</a><br /></td></tr>
 <tr class="separator:a3c50208a8c7ea021b0ae2b9dfbaec65a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa01692c6b2244621e9ab2b56ceedcf5c"><td class="memItemLeft" align="right" valign="top"><a id="aa01692c6b2244621e9ab2b56ceedcf5c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Render</b> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#aa01692c6b2244621e9ab2b56ceedcf5c">Render</a> ()</td></tr>
+<tr class="memdesc:aa01692c6b2244621e9ab2b56ceedcf5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">method render of this object <br /></td></tr>
 <tr class="separator:aa01692c6b2244621e9ab2b56ceedcf5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -101,6 +103,43 @@ Public Attributes</h2></td></tr>
 <a class="el" href="class_entity.html">Entity</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>owner</b></td></tr>
 <tr class="separator:a41f8bd2aafa27f6a04a212bfb2555a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3c50208a8c7ea021b0ae2b9dfbaec65a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c50208a8c7ea021b0ae2b9dfbaec65a">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Component::Update </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>deltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>method update of this component </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>the rate of update game loop </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_transform_component.html#a7f61e8eea1e3d05a32653fa45bd10fe1">TransformComponent</a>, <a class="el" href="class_tile_component.html#a0486a87a70992fa53eceb5f870200aa3">TileComponent</a>, <a class="el" href="class_sprite_component.html#a60b763e200bfa84b3c52e6c33c8f60f4">SpriteComponent</a>, <a class="el" href="class_keyboard_control_component.html#abdc15bcc6bfc23f81fff83fc3bca842a">KeyboardControlComponent</a>, and <a class="el" href="class_collider_component.html#ad386a7de246a32ec386592ddd20a5390">ColliderComponent</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>F:/Projects/cpp/2dgameengine/src/<a class="el" href="_component_8h_source.html">Component.h</a></li>
 </ul>

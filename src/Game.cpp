@@ -1,10 +1,13 @@
 #include <iostream>
+#include <string>
 #include "Constants.h"
 #include "Game.h"
 #include "AssetManager.h"
 #include "./Components/SpriteComponent.h"
 #include "./Components/KeyboardControlComponent.h"
 #include "./Components/ColliderComponent.h"
+#include "./Components/TextLabelComponent.h"
+#include "./Components/ProjectileEmitterComponent.h"
 #include "./Primitives/PCircle.h"
 #include "../lib/glm/glm.hpp"
 #include "GDZmath.h"
@@ -44,6 +47,11 @@ void Game::Initialize(int width, int height)
         return;
     }
 
+    if(TTF_Init() != 0){
+        messageInfo("Not initializate SDL_ttf");
+        return;
+    }
+
     window = SDL_CreateWindow(
         "Game Engine 2D",
         SDL_WINDOWPOS_CENTERED,
@@ -71,7 +79,8 @@ void Game::Initialize(int width, int height)
 }
 
 Entity& chopper(manager.AddEntity("chopper", PLAYER_LAYER));
-
+std::string _FPS = std::string("FPS: 0");
+int nu = 0;
 void Game::LoadLevel(int levelNumber){
     // New Assets
     assetManager->Addtexture("tank-image",
@@ -84,6 +93,11 @@ void Game::LoadLevel(int levelNumber){
         std::string("assets/tilemaps/jungle.png").c_str());
     assetManager->Addtexture("collider",
         std::string("assets/images/collision-texture.png").c_str());
+    assetManager->Addtexture("projectile-image",
+        std::string("assets/images/bullet-enemy.png").c_str());
+    
+    assetManager->AddFont("charriot-font",
+        std::string("assets/fonts/charriot.ttf").c_str(), 16);
 
     
     map = new Map("jungle-tiletexture", 2, 32);
@@ -91,7 +105,7 @@ void Game::LoadLevel(int levelNumber){
 
     //TODO: add entities 
     Entity& tank(manager.AddEntity("tank", ENEMY_LAYER));
-    tank.AddComponent<TransformComponent>(0, 0, 20, 20, 32, 32, 1);
+    tank.AddComponent<TransformComponent>(150, 495, 20, 20, 32, 32, 1);
     tank.AddComponent<SpriteComponent>("tank-image");
     tank.AddComponent<ColliderComponent>("ENEMY", 0, 0, 32, 32);
 
@@ -104,6 +118,18 @@ void Game::LoadLevel(int levelNumber){
     Entity& radar(manager.AddEntity("radar", UI_LAYER));
     radar.AddComponent<TransformComponent>(WINDOW_WIDTH - 64, 0, 0, 0, 64, 64, 1);
     radar.AddComponent<SpriteComponent>("ui-radar", 8, 30, false, true);
+
+    Entity& projectile(manager.AddEntity("projectile", PROJECTILE_LAYER));
+    projectile.AddComponent<TransformComponent>(150+16, 495+16, 0, 0, 4, 4, 1);
+    projectile.AddComponent<SpriteComponent>("projectile-image");
+    projectile.AddComponent<ColliderComponent>("PROJECTILE", 150+16, 495+16, 4, 4);
+    projectile.AddComponent<ProjectileEmitterComponent>(50, 270, 200, true);
+    
+    Entity& labelLevelName(manager.AddEntity("LabelLavel", UI_LAYER));
+    labelLevelName.AddComponent<TextLabelComponent>(10, 10, "Level 1", "charriot-font", WHITE_COLOR);
+
+    Entity& labelFPS(manager.AddEntity("LabelFPS", UI_LAYER));
+    labelFPS.AddComponent<TextLabelComponent>(10, 25, &_FPS, "charriot-font", GREEN_COLOR);
 
 }
 
@@ -134,7 +160,7 @@ void Game::Update(){
     // Delta time is the diference in
     // ticks from last frame converted to seconds
     float deltaTime = (SDL_GetTicks() - ticksLastFrame)/1000.0f;
-    
+    _FPS = "FPS: "+std::to_string(static_cast<int>(1.0f/deltaTime));
     //clmap a delta Time a maximum value
     deltaTime = (deltaTime > 0.05f) ? 0.05f : deltaTime;
     
@@ -209,6 +235,11 @@ void Game::CheckCollisions(){
     CollisionType collisionTagType = manager.CheckCollisions();
     if(collisionTagType == PLAYER_ENEMY_COLLISION){
         //TODO collider enemy
+        isRunning = false;
+    }
+    
+    if(collisionTagType == PLAYER_PROJECTILE_COLLISION){
+        //TODO collider a projectile enemy
         isRunning = false;
     }
 }

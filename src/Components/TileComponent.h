@@ -13,7 +13,17 @@ class TileComponent: public Component {
         SDL_Rect sourceRectangle;
         SDL_Rect destinationRectangle;
         glm::vec2 position;
-
+        /**
+         * @brief Construct a new Tile Component object
+         * 
+         * @param sourceRectX the tile rectangle source x
+         * @param sourceRectY the tile rectangle source y
+         * @param x position x
+         * @param y position y
+         * @param tileSize size of tile
+         * @param scale the scale 
+         * @param assetTextureId the texture id of asset manager
+         */
         TileComponent(
             int sourceRectX,
             int sourceRectY,

@@ -5,7 +5,10 @@
 #include "../TextureManager.h"
 #include "../AssetManager.h"
 #include "../Animation.h"
-
+/**
+ * @brief this class is sprite renderer in the entity object
+ * 
+ */
 class SpriteComponent: public Component {
 
     private:
@@ -24,13 +27,25 @@ class SpriteComponent: public Component {
 
     public:
         SDL_RendererFlip spriteFlip = SDL_FLIP_NONE;
-
+        /**
+         * @brief Construct a new Sprite Component object
+         * 
+         * @param assetTextureId the asset texture id is the same id in asset manager
+         */
         SpriteComponent(std::string assetTextureId){
             this->isAnimated = false;
             this->isFixed = false;
             SetTexture(assetTextureId);
         }
-
+        /**
+         * @brief Construct a new Sprite Component object
+         * 
+         * @param id the asset texture id is the same id in asset manager
+         * @param numFrames number of frames of sprite
+         * @param animationSpeed the animation speed
+         * @param hasDirections if sprite has directions in the animation
+         * @param isFixed if the sprite is UI
+         */
         SpriteComponent(std::string id, int numFrames, int animationSpeed, bool hasDirections, bool isFixed){
             this->isAnimated = true;
             this->numFrames = numFrames;
@@ -62,18 +77,26 @@ class SpriteComponent: public Component {
             Play(this->currentAnimationName);
             SetTexture(id);
         }
-
+        /**
+         * @brief this method play the animation of sprite
+         * 
+         * @param animationName the specific animation name
+         */
         void Play(std::string animationName){
             numFrames = animations[animationName].numFrames;
             animationIndex = animations[animationName].index;
             animationSpeed = animations[animationName].animationSpeed;
             currentAnimationName = animationName;  
         }
-
+        /**
+         * @brief this method recive a std::string asset id and call the GetTexture
+         * 
+         * @param assetTextureId the asset texture id is the same id in asset manager
+         */
         void SetTexture(std::string assetTextureId){
             texture = Game::assetManager->GetTexture(assetTextureId);
         }
-
+    
         void Initialize() override {
             transform = owner->GetComponent<TransformComponent>();
             sourceRectangle.x = 0;
@@ -85,7 +108,7 @@ class SpriteComponent: public Component {
         void Update(float deltaTime) override {
             if(isAnimated){
                 sourceRectangle.x = sourceRectangle.w * static_cast<int>( (SDL_GetTicks() / animationSpeed) % numFrames );
-                messageInfo(animationSpeed);
+                //messageInfo(animationSpeed);
             }
             sourceRectangle.y = animationIndex * transform->height;
 

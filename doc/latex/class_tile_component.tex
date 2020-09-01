@@ -9,15 +9,13 @@ Inheritance diagram for Tile\+Component\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_tile_component_a45c2db4b29fbbd8df7108d86ddb1bcbc}\label{class_tile_component_a45c2db4b29fbbd8df7108d86ddb1bcbc}} 
-{\bfseries Tile\+Component} (int source\+RectX, int source\+RectY, int x, int y, int tile\+Size, int scale, std\+::string asset\+Texture\+Id)
-\item 
-\mbox{\Hypertarget{class_tile_component_a0486a87a70992fa53eceb5f870200aa3}\label{class_tile_component_a0486a87a70992fa53eceb5f870200aa3}} 
-void {\bfseries Update} (float delta\+Time) override
-\item 
+\mbox{\hyperlink{class_tile_component_a45c2db4b29fbbd8df7108d86ddb1bcbc}{Tile\+Component}} (int source\+RectX, int source\+RectY, int x, int y, int tile\+Size, int scale, std\+::string asset\+Texture\+Id)
+\begin{DoxyCompactList}\small\item\em Construct a new Tile \mbox{\hyperlink{class_component}{Component}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_component_a0486a87a70992fa53eceb5f870200aa3}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em method update of this component \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_tile_component_ae6c9b5f7fb55d41b0b0dffe30f073b7e}\label{class_tile_component_ae6c9b5f7fb55d41b0b0dffe30f073b7e}} 
-void {\bfseries Render} () override
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_tile_component_ae6c9b5f7fb55d41b0b0dffe30f073b7e}{Render}} () override
+\begin{DoxyCompactList}\small\item\em method render of this object \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,6 +31,58 @@ S\+D\+L\+\_\+\+Rect {\bfseries destination\+Rectangle}
 \mbox{\Hypertarget{class_tile_component_ad630ae70ddeb6287721f682240a8362e}\label{class_tile_component_ad630ae70ddeb6287721f682240a8362e}} 
 glm\+::vec2 {\bfseries position}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_tile_component_a45c2db4b29fbbd8df7108d86ddb1bcbc}\label{class_tile_component_a45c2db4b29fbbd8df7108d86ddb1bcbc}} 
+\index{TileComponent@{TileComponent}!TileComponent@{TileComponent}}
+\index{TileComponent@{TileComponent}!TileComponent@{TileComponent}}
+\doxysubsubsection{\texorpdfstring{TileComponent()}{TileComponent()}}
+{\footnotesize\ttfamily Tile\+Component\+::\+Tile\+Component (\begin{DoxyParamCaption}\item[{int}]{source\+RectX,  }\item[{int}]{source\+RectY,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{tile\+Size,  }\item[{int}]{scale,  }\item[{std\+::string}]{asset\+Texture\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Tile \mbox{\hyperlink{class_component}{Component}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+RectX} & the tile rectangle source x \\
+\hline
+{\em source\+RectY} & the tile rectangle source y \\
+\hline
+{\em x} & position x \\
+\hline
+{\em y} & position y \\
+\hline
+{\em tile\+Size} & size of tile \\
+\hline
+{\em scale} & the scale \\
+\hline
+{\em asset\+Texture\+Id} & the texture id of asset manager \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tile_component_a0486a87a70992fa53eceb5f870200aa3}\label{class_tile_component_a0486a87a70992fa53eceb5f870200aa3}} 
+\index{TileComponent@{TileComponent}!Update@{Update}}
+\index{Update@{Update}!TileComponent@{TileComponent}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Tile\+Component\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+method update of this component 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & the rate of update game loop \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_component_a3c50208a8c7ea021b0ae2b9dfbaec65a}{Component}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

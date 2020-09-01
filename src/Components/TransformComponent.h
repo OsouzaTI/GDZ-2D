@@ -17,7 +17,18 @@ class TransformComponent: public Component {
         int width;
         int height;
         int scale;
-
+        /**
+         * @brief Construct a new Transform Component object
+         * 
+         * @param posX the position x
+         * @param posY the y position
+         * @param velX the velocity x
+         * @param velY the velocity y
+         * @param w the width of transform
+         * @param h the height of transform
+         * @param s the scale of transform
+         * @param isPlayer if it's tranform player
+         */
         TransformComponent(int posX, int posY, int velX, int velY, int w, int h, int s, bool isPlayer = false){
             position = glm::vec2(posX, posY);
 

@@ -6,7 +6,10 @@
 #include "../Components/TransformComponent.h"
 #include "../Components/SpriteComponent.h"
 #include "../Constants.h"
-
+/**
+ * @brief Class KeyboardControlComponent, this class is the component
+ * control of keyboard inputs
+ */
 class KeyboardControlComponent: public Component {
 
     public:
@@ -21,7 +24,15 @@ class KeyboardControlComponent: public Component {
         KeyboardControlComponent(){
 
         }
-
+        /**
+         * @brief Construct a new Keyboard Control Component object
+         * 
+         * @param _upKey handle of up key
+         * @param _downKey handle of down key
+         * @param _rightKey handle of right key
+         * @param _leftKey handle of left key
+         * @param _shootKey handle of shoot key
+         */
         KeyboardControlComponent(
             std::string _upKey,
             std::string _downKey,
@@ -36,6 +47,12 @@ class KeyboardControlComponent: public Component {
             this->shootKey  = GetSDLKeyStringCode(_shootKey);
         }
 
+        /**
+         * @brief the manager of all key handles
+         * 
+         * @param key the key parameter getter
+         * @return std::string 
+         */
         std::string GetSDLKeyStringCode(std::string key){
             if (key.compare("up") == 0) return "1073741906";
             if (key.compare("down") == 0) return "1073741905";
