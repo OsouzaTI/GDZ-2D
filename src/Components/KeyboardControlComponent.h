@@ -59,11 +59,8 @@ class KeyboardControlComponent: public Component {
             if (key.compare("left") == 0) return "1073741904";
             if (key.compare("right") == 0) return "1073741903";
             if (key.compare("space") == 0) return "32"; 
-            std::string logKey = std::to_string(static_cast<int>(key[0]));
-            messageInfo("Key Get::[" << static_cast<int>(key[0]) << "]");
-            messageInfo("Key ToString::[" << logKey << "]");
-            messageInfo("Key Normal::[" << key[0] << "]");
-            return logKey;
+  
+            return std::to_string(static_cast<int>(key[0]));
         }
 
         void Initialize() override {

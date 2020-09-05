@@ -142,6 +142,14 @@ CollisionType EntityManager::CheckCollisions() const {
 //     }
 // }
 
+Entity* EntityManager::GetEntityByName(std::string name){
+    for(auto& entity: entities){
+        if(entity->name.compare(name) == 0){
+            return entity;
+        }
+    }
+}
+
 void EntityManager::ShowEntity(Entity* entity){
     messageInfo("Entity Name -> " << entity->name);
 }

@@ -37,6 +37,14 @@ class SpriteComponent: public Component {
             this->isFixed = false;
             SetTexture(assetTextureId);
         }
+
+                
+        SpriteComponent(std::string assetTextureId, bool isFixed) {
+            this->isAnimated = false;
+            this->isFixed = isFixed;
+            SetTexture(assetTextureId);
+        }
+
         /**
          * @brief Construct a new Sprite Component object
          * 

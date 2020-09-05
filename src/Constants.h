@@ -40,4 +40,11 @@ const unsigned int NUM_LAYERS = 6;
 const SDL_Color WHITE_COLOR = {255, 255, 255, 255};
 const SDL_Color GREEN_COLOR = {0, 255, 0, 255};
 
+//DEFINIÇÇÕES DO ARQUIVO LUA
+#define LUA_COMPONENTS          "components"
+#define LUA_TRANSFORM           "transform"
+#define LUA_SPRITE              "sprite"
+#define LUA_INPUT               "input"
+#define LUA_PROJECTILE_EMITTER  "projectileEmitter"
+
 #endif

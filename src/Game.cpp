@@ -73,7 +73,7 @@ void Game::Initialize(int width, int height)
         return;
     }
 
-    LoadLevel(1);
+    LoadLevel(0);
 
     this->isRunning = true;
     return;
@@ -124,6 +124,144 @@ void Game::LoadLevel(int levelNumber){
         static_cast<int>(levelMap["mapSizeX"]),
         static_cast<int>(levelMap["mapSizeY"])
     );
+
+    //Load entities
+    sol::table levelEntities = levelData["entities"];
+    unsigned int entityIndex = 0;
+    while(true){
+        sol::optional<sol::table> existsEntityIndexNode = levelEntities[entityIndex];
+        if(existsEntityIndexNode == sol::nullopt){
+            break;
+        }else{
+            sol::table entity = levelEntities[entityIndex];
+            std::string entityName = entity["name"];
+            LayerType entityLayerType = static_cast<LayerType>(static_cast<int>(entity["layer"]));
+
+            // Add new entity
+            auto& newEntity(manager.AddEntity(entityName, entityLayerType));
+
+            // Add transform component
+            sol::optional<sol::table> existsTransformComponent = entity[LUA_COMPONENTS][LUA_TRANSFORM];
+            if(existsTransformComponent != sol::nullopt){
+                sol::optional<bool> existsBoolIsPlayer = entity[LUA_COMPONENTS][LUA_TRANSFORM]["isPlayer"];
+                if(existsBoolIsPlayer != sol::nullopt){
+                    newEntity.AddComponent<TransformComponent>(
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["position"]["x"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["position"]["y"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["velocity"]["x"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["velocity"]["y"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["width"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["height"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["scale"]),
+                        true
+                    );
+                }else{
+                    newEntity.AddComponent<TransformComponent>(
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["position"]["x"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["position"]["y"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["velocity"]["x"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["velocity"]["y"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["width"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["height"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["scale"])                        
+                    );
+                }
+            }
+
+            // Add sprite component
+            sol::optional<sol::table> existsSpriteComponent = entity[LUA_COMPONENTS][LUA_SPRITE];
+            if(existsSpriteComponent != sol::nullopt){
+                std::string textureId = entity[LUA_COMPONENTS][LUA_SPRITE]["textureAssetId"];
+                bool isAnimated = entity[LUA_COMPONENTS][LUA_SPRITE]["animated"];
+                if(isAnimated){
+                    newEntity.AddComponent<SpriteComponent>(
+                        textureId,
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_SPRITE]["frameCount"]),
+                        static_cast<int>(entity[LUA_COMPONENTS][LUA_SPRITE]["animationSpeed"]),
+                        static_cast<bool>(entity[LUA_COMPONENTS][LUA_SPRITE]["hasDirections"]),
+                        static_cast<bool>(entity[LUA_COMPONENTS][LUA_SPRITE]["fixed"])
+                    );
+                }else{
+                    newEntity.AddComponent<SpriteComponent>(textureId, false);
+                }
+            }
+
+            // Add input control
+            sol::optional<sol::table> existsInputComponent = entity[LUA_COMPONENTS][LUA_INPUT];
+            if(existsInputComponent != sol::nullopt){
+                sol::optional<sol::table> existsKeyboardInputComponent = entity[LUA_COMPONENTS][LUA_INPUT]["keyboard"];
+                if(existsKeyboardInputComponent != sol::nullopt){
+                    std::string upKey = entity[LUA_COMPONENTS][LUA_INPUT]["keyboard"]["up"];
+                    std::string downKey = entity[LUA_COMPONENTS][LUA_INPUT]["keyboard"]["down"];
+                    std::string rightKey = entity[LUA_COMPONENTS][LUA_INPUT]["keyboard"]["right"];
+                    std::string leftKey = entity[LUA_COMPONENTS][LUA_INPUT]["keyboard"]["left"];
+                    std::string shootKey = entity[LUA_COMPONENTS][LUA_INPUT]["keyboard"]["shoot"];
+                    newEntity.AddComponent<KeyboardControlComponent>(upKey, downKey, rightKey, leftKey, shootKey);
+                }
+            }
+
+            //Add collider component
+            sol::optional<sol::table> existsColliderComponent = entity[LUA_COMPONENTS]["collider"];
+            if(existsColliderComponent != sol::nullopt){
+                std::string colliderTag = entity[LUA_COMPONENTS]["collider"]["tag"];
+                newEntity.AddComponent<ColliderComponent>(
+                    colliderTag,
+                    static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["position"]["x"]),
+                    static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["position"]["y"]),
+                    static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["width"]),
+                    static_cast<int>(entity[LUA_COMPONENTS][LUA_TRANSFORM]["height"])
+                );
+            }
+
+            // Add projectile emitter component
+            sol::optional<sol::table> existsProjectileEmitterComponent = entity[LUA_COMPONENTS][LUA_PROJECTILE_EMITTER];
+            if(existsProjectileEmitterComponent != sol::nullopt){
+                int parentEntityXPos = entity[LUA_COMPONENTS][LUA_TRANSFORM]["position"]["x"];
+                int parentEntityYPos = entity[LUA_COMPONENTS][LUA_TRANSFORM]["position"]["y"];
+                int parentEntityWidth = entity[LUA_COMPONENTS][LUA_TRANSFORM]["width"];
+                int parentEntityHeight = entity[LUA_COMPONENTS][LUA_TRANSFORM]["height"];
+                int projectileWidth  = entity[LUA_COMPONENTS][LUA_PROJECTILE_EMITTER]["width"];
+                int projectileHeight = entity[LUA_COMPONENTS][LUA_PROJECTILE_EMITTER]["height"];
+                int projectileSpeed = entity[LUA_COMPONENTS][LUA_PROJECTILE_EMITTER]["speed"];
+                int projectileRange = entity[LUA_COMPONENTS][LUA_PROJECTILE_EMITTER]["range"];
+                int projectileAngle = entity[LUA_COMPONENTS][LUA_PROJECTILE_EMITTER]["angle"];
+                bool projectileShouldLoop = entity[LUA_COMPONENTS][LUA_PROJECTILE_EMITTER]["shouldLoop"];
+                std::string textureAssetId = entity[LUA_COMPONENTS][LUA_PROJECTILE_EMITTER]["textureAssetId"];
+
+                Entity& projectile(manager.AddEntity("projectile", PROJECTILE_LAYER));
+                projectile.AddComponent<TransformComponent>(
+                    parentEntityXPos + (parentEntityWidth / 2),
+                    parentEntityYPos + (parentEntityHeight / 2),
+                    0,
+                    0,
+                    projectileWidth,
+                    projectileHeight,
+                    1
+                );
+                
+                projectile.AddComponent<SpriteComponent>(textureAssetId);
+                
+                projectile.AddComponent<ProjectileEmitterComponent>(
+                    projectileSpeed,
+                    projectileAngle,
+                    projectileRange,
+                    projectileShouldLoop
+                );
+
+                projectile.AddComponent<ColliderComponent>(
+                    "PROJECTILE",
+                    parentEntityXPos,
+                    parentEntityYPos,
+                    projectileWidth,
+                    projectileHeight
+                );
+
+            }
+
+        }
+        entityIndex++;
+    }
+    mainPlayer = manager.GetEntityByName("player");
 }
 
 void Game::ProcessInput(){
