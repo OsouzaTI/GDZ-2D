@@ -73,7 +73,7 @@ void Game::Initialize(int width, int height)
         return;
     }
 
-    LoadLevel(0);
+    LoadLevel(1);
 
     this->isRunning = true;
     return;
