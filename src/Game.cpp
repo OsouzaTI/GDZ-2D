@@ -331,20 +331,24 @@ void KeepWindow(TransformComponent* playerTF){
     int _WINDOW_WIDTH  = WINDOW_WIDTH  * MapScale;
     int _WINDOW_HEIGHT = WINDOW_HEIGHT * MapScale;
 
-    if(playerTF->position.x > _WINDOW_WIDTH - playerTF->width){                
+    if(playerTF->position.x > _WINDOW_WIDTH - playerTF->width){                        
+        playerTF->velocity.x = 0;
         playerTF->position.x--;
     }
 
     if(playerTF->position.x < 0){
-        playerTF->position.x++;
+        playerTF->velocity.x = 0;
+         playerTF->position.x++;
     }
     
     if(playerTF->position.y > _WINDOW_HEIGHT - playerTF->height){
-        playerTF->position.y--;
+        playerTF->velocity.y = 0;
+         playerTF->position.y--;
     }
 
     if(playerTF->position.y < 0){
-        playerTF->position.y++;
+        playerTF->velocity.y = 0;
+         playerTF->position.y++;
     }
 
 }
@@ -359,7 +363,7 @@ void Game::HandleCameraMovement(){
         camera.x = GDZmath::clamp(camera.x, camera.w, 0);
         camera.y = GDZmath::clamp(camera.y, camera.h, 0);
 
-        //KeepWindow(mainPlayerTransform);
+        KeepWindow(mainPlayerTransform);
     }
 }
 
