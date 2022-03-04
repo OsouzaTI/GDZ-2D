@@ -14,7 +14,7 @@ bool EntityManager::HasNoEntities(){
 }
 
 void EntityManager::Update(float deltaTime){
-
+    printf("delta time: %f\n", deltaTime);
     for (int i = 0; i < entities.size(); i++)
     {
         entities[i]->Update(deltaTime);

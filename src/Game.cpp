@@ -248,13 +248,23 @@ void Game::LoadLevel(int levelNumber){
                     projectileShouldLoop
                 );
 
-                projectile.AddComponent<ColliderComponent>(
-                    "PROJECTILE",
-                    parentEntityXPos,
-                    parentEntityYPos,
-                    projectileWidth,
-                    projectileHeight
-                );
+                if(entityName.compare("player") == 0){
+                    projectile.AddComponent<ColliderComponent>(
+                        "PLAYER_PROJECTILE",
+                        parentEntityXPos,
+                        parentEntityYPos,
+                        projectileWidth,
+                        projectileHeight
+                    );
+                }else{
+                    projectile.AddComponent<ColliderComponent>(
+                        "PROJECTILE",
+                        parentEntityXPos,
+                        parentEntityYPos,
+                        projectileWidth,
+                        projectileHeight
+                    );
+                }
 
             }
 

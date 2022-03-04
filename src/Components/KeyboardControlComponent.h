@@ -5,6 +5,7 @@
 #include "../EntityManager.h"
 #include "../Components/TransformComponent.h"
 #include "../Components/SpriteComponent.h"
+#include "../Components/ProjectileEmitterComponent.h"
 #include "../Constants.h"
 /**
  * @brief Class KeyboardControlComponent, this class is the component
@@ -19,6 +20,7 @@ class KeyboardControlComponent: public Component {
         std::string leftKey;
         std::string shootKey;
         TransformComponent *transform;
+        ProjectileEmitterComponent* projectile;
         SpriteComponent *sprite;
 
         KeyboardControlComponent(){
